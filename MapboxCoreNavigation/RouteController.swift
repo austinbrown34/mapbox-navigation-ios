@@ -585,9 +585,9 @@ extension RouteController: CLLocationManagerDelegate {
 //        NSString *documentPath = [NSString stringWithFormat:@"%@%s", sourcePath, ".osrm"];
 //        let documentsDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
 //        let osrmPath = documentsDir + xmlpath + ".osrm"
-        let sourcePath = Bundle.main.path(forResource: "billings2", ofType: "xml")
-        let osrmPath = sourcePath! + ".osrm"
-        routeTask = directions.calculate(options, osrmPath:osrmPath) {(waypoints, potentialRoutes, potentialError) in
+//        let sourcePath = Bundle.main.path(forResource: "billings2", ofType: "xml")
+//        let osrmPath = sourcePath! + ".osrm"
+        routeTask = directions.calculate(options) {(waypoints, potentialRoutes, potentialError) in
 
             guard let routes = potentialRoutes else {
                 return complete(nil, potentialError)
